@@ -3,315 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Exercise Portfolio</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Outer Page Background providing the Left and Right Whitespace */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #222;
-            display: flex;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-            padding: 0 5%;
-        }
-
-        /* Full-Height Split Screen Wrapper Container */
-        .page-wrapper {
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            height: 100vh;
-            background-color: #ffffff;
-        }
-
-
-
-        /* Left Sidebar: Prevents the entire panel from moving down */
-        aside {
-            width: 320px;
-            background-color: #ffffff;
-            border-right: 1px solid #e5e5e5;
-            display: flex;
-            flex-direction: column; /* Stacks header elements and list vertically */
-            height: 100vh;          /* Force full screen viewport height */
-            flex-shrink: 0;
-            overflow: hidden;       /* Locks the main sidebar structure in place */
-        }
-
-        /* Fixed Header Area containing logo and text title */
-        .sidebar-header {
-            padding: 15px 0 0 0;
-            background-color: #ffffff;
-            border-bottom: none;
-            flex-shrink: 0;         /* Prevents this block from shrinking or scrolling */
-        }
-    
-        /* Full-Width Logo Styling */
-        .sidebar-logo {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Fixed Main Portfolio Header Title */
-        .main-portfolio-title {
-            font-size: 1rem;
-            font-weight: bold;
-            color: #111111;
-            padding: 15px 0;    
-            margin-left: 0;         
-            margin-bottom: 0;       /* Set to 0 to align cleanly against scrolling menu */
-            margin-right: -15px;    
-            border-bottom: 1px solid #e5e5e5;
-            line-height: 1.4;
-            background-color: #ffffff;
-            flex-shrink: 0;         /* Keeps the title locked */
-        }
-
-        /* Independently Scrollable Navigation Container */
-        .menu-container {
-            padding: 10px 0 30px 0;
-            overflow-y: auto;       /* Allows ONLY this internal container to scroll */
-            flex-grow: 1;           /* Automatically takes up the rest of the screen height */
-
-            /* Hide scrollbar for Firefox */
-            scrollbar-width: none; 
-            /* Hide scrollbar for Internet Explorer and Edge */
-            -ms-overflow-style: none; 
-        }
-
-        /* Hide scrollbar for Chrome, Safari, and Opera */
-        .menu-container::-webkit-scrollbar {
-            display: none;
-            width: 0px;
-            background: transparent;
-        }
-
-
-        
-
-
-
-        /* Section Category Titles - Perfectly Flush Left */
-        .section-title {
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: #111111;
-            padding: 6px 0 4px 0;   /* Changed 10px to 0 on the left */
-            border-bottom: none;
-            margin-bottom: 4px;
-        }
-
-        /* Exercise Items List - Perfectly Flush Left */
-        .exercise-item {
-            padding: 6px 0;         
-            margin-bottom: 2px;
-            background-color: #ffffff;
-            border: none;
-            cursor: pointer;
-            font-size: 0.85rem;
-            color: #555555;
-            border-radius: 4px;
-            transition: background-color 0.15s ease, color 0.15s ease;
-        }
-
-
-        
-        /* Hover interaction: Rectangular light blue highlight, NO shifting */
-        .exercise-item:hover, .exercise-item.active {
-            background-color: #e6f2ff; /* Clean light blue color */
-            color: #000000;
-            border-radius: 0;          /* Forces perfectly sharp rectangular corners */
-            padding-left: 0; 
-        }
-
-        
-
-
-
-
-
-        
-        /* Right Content Area: Expands to fill remaining screen space */
-        main {
-            flex-grow: 1;
-            padding: 40px 60px;
-            overflow-y: auto;
-            background-color: #ffffff;
-        }
-
-        .content-card {
-            max-width: 800px;
-        }
-
-        h1 { margin-bottom: 12px; color: #111111; font-size: 1.6rem; }
-        p { line-height: 1.6; color: #444444; margin-bottom: 20px; font-size: 0.95rem; }
-        
-        .code-preview {
-            background-color: #f9f9f9;
-            border: 1px solid #e5e5e5;
-            padding: 15px;
-            font-family: monospace;
-            font-size: 0.88rem;
-            white-space: pre-wrap;
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #111111;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .btn:hover { background-color: #444444; }
-
-
-
-
-
-
-
-        
-    </style>
+    <title>LLM-Contract - Test and Evaluate Your AI Agents with Confidence</title>
+    <meta name="description" content="LLM-Contract is a TypeScript library and command-line tool that helps you test, evaluate, and improve your AI agents, LLM applications, and RAG systems. Detect regressions, validate structured outputs, and track flaky tests with easy CI/CD integration.">
+    <meta name="keywords" content="ai-agents,ai-testing,ci-cd,contract-testing,grounding-validation,llm,llm-evaluation,prompt-testing,rag,regression-testing,structured-output,typescript">
+    <meta name="author" content="Sarthak Sinha">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="LLM-Contract - Test and Evaluate Your AI Agents with Confidence">
+    <meta property="og:description" content="LLM-Contract is a TypeScript library and command-line tool that helps you test, evaluate, and improve your AI agents, LLM applications, and RAG systems. Detect regressions, validate structured outputs, and track flaky tests with easy CI/CD integration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/sarthaksinha2600/LLM-Contract">
 </head>
-<body>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; background-color: #f7f9fc; margin: 0; padding: 0; line-height: 1.6; color: #1a202c;">
 
+    <div style="max-width: 960px; margin: 0 auto; padding: 40px 20px;">
 
+        <!-- Header Section -->
+        <header style="text-align: center; padding: 20px 0; margin-bottom: 20px;">
+            <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #1a202c; line-height: 1.2;">
+                🔬 LLM-Contract - Test Your AI, Guard Your Quality
+            </h1>
+            <p style="font-size: 1.3rem; color: #4a5568; margin-top: 1rem;">Ensure your AI agents and LLM apps work correctly, every single time.</p>
+        </header>
 
+        <!-- Primary Download Button (Prominent at the top) -->
+        <div style="text-align: center; margin: 30px 0 10px;">
+            <a href="https://github.com/sarthaksinha2600/LLM-Contract/releases" style="display: inline-block; background-color: #2b6cb0; color: #ffffff; font-size: 1.4rem; padding: 20px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);">
+                ⬇️ Download LLM-Contract Now
+            </a>
+            <p style="font-size: 0.95rem; color: #718096; margin-top: 15px;"><strong>Visit this link to download the application.</strong></p>
+        </div>
 
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 40px 0;">
 
-        <!-- Split Screen Wrapper with Outer Side Padding -->
-    <div class="page-wrapper">
+        <!-- What is LLM-Contract? -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748;">🤔 What is LLM-Contract?</h2>
+            <p style="font-size: 1.1rem; color: #4a5568;">Imagine you have a super-smart AI assistant that helps you write emails, summarize documents, or answer questions. How do you know it will always work correctly? How do you know it won't suddenly start giving wrong answers after you make a small change?</p>
+            <p style="font-size: 1.1rem; color: #4a5568;">That's what <strong>LLM-Contract</strong> is for. It's a special tool that helps you <strong>test and check</strong> your AI, just like a quality check in a factory. You can tell it what the AI should do, and LLM-Contract will run checks to see if it meets your expectations. It's like a safety net for your AI!</p>
+            <p style="font-size: 1rem; color: #718096;">This tool is built for developers, so it lets them use it from a simple command prompt on their computer (Windows, Mac, or Linux). It also comes as a ready-to-use library that can be added to existing software projects built with TypeScript.</p>
+        </section>
 
-        <!-- Left Sidebar (Split Pane 1) -->
-        <aside>
-            <!-- Everything inside this header box remains completely static and frozen -->
-            <div class="sidebar-header">
-                <img src="logo.png" alt="Site Logo" class="sidebar-logo">
-                
-                <!-- MOVED HERE: Main Portfolio Header Title is now locked with the logo -->
-                <div class="main-portfolio-title">
-                    Simulation Methods in Econometrics: Theory and Applications in MATLAB
+        <!-- Why Do I Need It? -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748;">💡 Why Do You Need It?</h2>
+            <p style="font-size: 1.1rem; color: #4a5568;">AI is powerful, but it's not always predictable. LLM-Contract helps you answer critical questions:</p>
+            <ul style="font-size: 1.1rem; color: #4a5568; padding-left: 20px; list-style-type: disc;">
+                <li><strong>Did my change break something?</strong> After tweaking your AI's instructions, you can run checks to see if it still behaves as expected.</li>
+                <li><strong>Is my AI giving the right format?</strong> If you need it to return a specific structure (like a table or a list), you can validate that.</li>
+                <li><strong>Is my AI 'grounded' in facts?</strong> For AI that answers questions based on a set of documents (RAG), it checks if the answers are actually based on the provided material.</li>
+                <li><strong>Is the AI flaky?</strong> It can sometimes pass a test and sometimes fail not because of you, but because the AI is a bit unpredictable. LLM-Contract helps track and identify these flaky results.</li>
+                <li><strong>Does it pass my quality gate?</strong> It integrates into your software-building pipeline (CI/CD), so if the tests fail, the next version won't be released. Safety first!</li>
+            </ul>
+        </section>
+
+        <!-- Key Features -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748;">🚀 Key Features That Help You</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                <div style="background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 10px; color: #2b6cb0;">🧪 Test Your AI Agents</h3>
+                    <p style="font-size: 1rem; color: #4a5568; margin: 0;">Define a "contract" of expected behaviors for your AI assistant. Whether it's a simple chatbot or a complex agent that uses tools, you can specify what "good" looks like, and LLM-Contract will check.</p>
+                </div>
+                <div style="background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 10px; color: #2b6cb0;">🔄 Catch Regressions Early</h3>
+                    <p style="font-size: 1rem; color: #4a5568; margin: 0;">Made a change to your AI's prompt? Run the suite to see if it still follows the original rules. Catch mistakes before your users do.</p>
+                </div>
+                <div style="background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 10px; color: #2b6cb0;">📐 Validate Structured Output</h3>
+                    <p style="font-size: 1rem; color: #4a5568; margin: 0;">If your AI should return data in a specific format (like JSON for a program to read), LLM-Contract can verify the structure is perfect every time.</p>
+                </div>
+                <div style="background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 10px; color: #2b6cb0;">📚 RAG Grounding Check</h3>
+                    <p style="font-size: 1rem; color: #4a5568; margin: 0;">For systems that use Retrieval-Augmented Generation (RAG), ensure the AI only uses your provided information and doesn't make things up.</p>
+                </div>
+                <div style="background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 10px; color: #2b6cb0;">📈 Track Flakiness</h3>
+                    <p style="font-size: 1rem; color: #4a5568; margin: 0;">AI can be unpredictable. LLM-Contract helps you separate real problems from random failures, giving you a clearer picture of your system's reliability.</p>
+                </div>
+                <div style="background-color: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; margin: 0 0 10px; color: #2b6cb0;">⚙️ CI/CD Ready</h3>
+                    <p style="font-size: 1rem; color: #4a5568; margin: 0;">Easily plug it into your automated software delivery pipeline. Set it as a gate to prevent releases when your AI fails the checks.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Only the items inside this menu container will scroll -->
-            <div class="menu-container">
+        <!-- How to Get It (Download Section with Link) -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748;">⬇️ How to Get It (Download)</h2>
+            <p style="font-size: 1.1rem; color: #4a5568;">Getting started is super easy. Just click on the big blue button again. You'll be taken to a page where you can find the latest version of the tool.</p>
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="https://github.com/sarthaksinha2600/LLM-Contract/releases" style="display: inline-block; background-color: #38a169; color: #ffffff; font-size: 1.3rem; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);">
+                    ⬇️ Go to the Download Page
+                </a>
+            </div>
+            <div style="background-color: #fffbeb; border-left: 4px solid #ecc94b; padding: 15px; border-radius: 8px;">
+                <p style="font-size: 1rem; color: #744210; margin: 0;"><strong>Important:</strong> <strong>Visit this link to download the application.</strong> The download page will have the files you need. This tool is a command-line application, so after downloading, you will run it from your computer's terminal (Command Prompt on Windows).</p>
+            </div>
+        </section>
 
-                <!-- Introduction to MATLAB -->
-                <div class="nav-section">
+        <!-- System Requirements (Placeholder) -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748;">🖥️ System Requirements</h2>
+            <p style="font-size: 1.1rem; color: #4a5568;">LLM-Contract runs on any modern computer. To use it, you'll need:</p>
+            <ul style="font-size: 1.1rem; color: #4a5568; padding-left: 20px; list-style-type: circle;">
+                <li><strong>Operating System:</strong> Windows 10 or later, macOS 12 or later, or a modern Linux distribution (like Ubuntu 20.04 or later).</li>
+                <li><strong>Memory:</strong> At least 4 GB of RAM is recommended for smooth testing, especially for larger AI models.</li>
+                <li><strong>Storage:</strong> About 500 MB of free disk space for the tool and its dependencies.</li>
+                <li><strong>Internet Connection:</strong> An active internet connection is required to interact with most large language models (like GPT-4, Claude, etc.) that you will be testing.</li>
+                <li><strong>Optional:</strong> Node.js (version 18 or higher) if you plan to use it as a library within your own software projects.</li>
+            </ul>
+        </section>
 
-    
-    
-    
-    
-    <div class="section-title">Introduction to MATLAB</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('matlab-workshop', this)">MATLAB workshop</li>
-                    </ul>
-                </div>
+        <!-- What's Next / Quick Start -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748;">🚦 Your First Steps</h2>
+            <p style="font-size: 1.1rem; color: #4a5568;">After you've downloaded the application, here’s a non-technical overview of what to expect. Detailed instructions will be in the documentation you get with the download.</p>
+            <ol style="font-size: 1.1rem; color: #4a5568; padding-left: 20px;">
+                <li><strong>Find the files:</strong> Once you download and extract the package (if it's a zip file), you'll see an executable file or a way to install it.</li>
+                <li><strong>Open your command line:</strong> On Windows, you can search for "Command Prompt" or "PowerShell". On Mac, search for "Terminal".</li>
+                <li><strong>Run the tool:</strong> You'll type a simple command to start LLM-Contract. It will guide you through setting up your first test.</li>
+                <li><strong>Configure your AI:</strong> You tell it which AI model to talk to (using your API key) and what behavior to expect.</li>
+                <li><strong>Run your tests:</strong> It will then perform the checks and show you a clear report—pass or fail—right in your command window.</li>
+            </ol>
+            <p style="font-size: 1rem; color: #718096; margin-top: 15px;">Remember: The download page will include full, step-by-step instructions tailored to the specific version you get. It's simpler than it sounds!</p>
+        </section>
 
-                <!-- Asymptotic Foundations -->
-                <div class="nav-section">
-                    <div class="section-title">Asymptotic Foundations</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('asymptotics-lln', this)">Asymptotics LLN</li>
-                        <li class="exercise-item" onclick="loadContent('asymptotics-clt', this)">Asymptotics CLT</li>
-                        <li class="exercise-item" onclick="loadContent('asymptotics-speed', this)">Asymptotics convergence speed</li>
-                    </ul>
-                </div>
-
-                <!-- Sampling Distributions and Estimator Properties -->
-                <div class="nav-section">
-                    <div class="section-title">Sampling Distributions and Estimator Properties</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('est-dist', this)">Estimator sampling distribution</li>
-                        <li class="exercise-item" onclick="loadContent('est-unbiased', this)">Estimator statistical property unbiasedness</li>
-                        <li class="exercise-item" onclick="loadContent('est-consistency', this)">Estimator statistical property consistency</li>
-                        <li class="exercise-item" onclick="loadContent('est-normality', this)">Estimator statistical property asymptotic normality</li>
-                        <li class="exercise-item" onclick="loadContent('inf-ci', this)">Inference confidence interval estimation</li>
-                        <li class="exercise-item" onclick="loadContent('inf-test', this)">Inference hypothesis testing</li>
-                    </ul>
-                </div>
-
-                <!-- Linear Regression: Functions and Assumptions -->
-                <div class="nav-section">
-                    <div class="section-title">Linear Regression: Functions and Assumptions</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('reg-exogeneity', this)">Model assumption exogeneity</li>
-                        <li class="exercise-item" onclick="loadContent('reg-homo', this)">Model assumption homoskedasticity</li>
-                        <li class="exercise-item" onclick="loadContent('reg-no-error', this)">Model assumption no measurement error</li>
-                        <li class="exercise-item" onclick="loadContent('reg-no-serial', this)">Model assumption no serial correlation</li>
-                        <li class="exercise-item" onclick="loadContent('reg-normality', this)">Model assumption normality</li>
-                        <li class="exercise-item" onclick="loadContent('reg-multicollinearity', this)">Data feature high multicollinearity</li>
-                    </ul>
-                </div>
-
-                <!-- Monte Carlo Integration -->
-                <div class="nav-section">
-                    <div class="section-title">Monte Carlo Integration</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('mc-theory', this)">Monte Carlo integration theory</li>
-                        <li class="exercise-item" onclick="loadContent('mc-theory', this)">Monte Carlo integration identity function</li>
-                        <li class="exercise-item" onclick="loadContent('mc-log', this)">Monte Carlo integration logarithmic function</li>
-                        <li class="exercise-item" onclick="loadContent('mc-gaussian', this)">Monte Carlo integration gaussian function</li>
-                        <li class="exercise-item" onclick="loadContent('mc-profit', this)">Monte Carlo integration profit function</li>
-                    </ul>
-                </div>
-
-                <!-- Random Variate Generation -->
-                <div class="nav-section">
-                    <div class="section-title">Random Variate Generation</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('rv-its-theory', this)">Inverse transform sampling theory</li>
-                        <li class="exercise-item" onclick="loadContent('rv-its-app', this)">Inverse transform sampling application</li>
-                        <li class="exercise-item" onclick="loadContent('rv-rej-theory', this)">Rejection sampling theory</li>
-                        <li class="exercise-item" onclick="loadContent('rv-rej-gauss', this)">Rejection sampling gaussian-oscillatory</li>
-                    </ul>
-                </div>
-                
-                <!-- Markov Chain Monte Carlo -->
-                <div class="nav-section">
-                    <div class="section-title">Markov Chain Monte Carlo</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('mcmc-theory', this)">MCMC theory</li>
-                        <li class="exercise-item" onclick="loadContent('mcmc-mh', this)">MCMC implementation metropolis–hastings</li>
-                        <li class="exercise-item" onclick="loadContent('mcmc-gibs', this)">MCMC implementation gibs</li>
-                        <li class="exercise-item" onclick="loadContent('mcmc-bayes', this)">MCMC Bayesian estimation and multi-dimensional integration</li>
-                    </ul>
-                </div>
-                
-                <!-- Simulation-Based Estimation and Inference -->
-                <div class="nav-section">
-                    <div class="section-title">Simulation-Based Estimation and Inference</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('sim-msl-theory', this)">Maximum simulated likelihood theory</li>
-                        <li class="exercise-item" onclick="loadContent('sim-msl-app', this)">Maximum simulated likelihood application</li>
-                        <li class="exercise-item" onclick="loadContent('sim-msm-theory', this)">Method of simulated moments theory</li>
-                        <li class="exercise-item" onclick="loadContent('sim-msm-app', this)">Method of simulated moments application</li>
-                        <li class="exercise-item" onclick="loadContent('sim-indirect', this)">Indirect inference</li>
-                    </ul>
-                </div>
-                
-                <!-- Bootstrap Methods -->
-                <div class="nav-section">
-                    <div class="section-title">Bootstrap Methods</div>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('boot-theory', this)">Bootstrap theory</li>
-                        <li class="exercise-item" onclick="loadContent('boot-basic', this)">Bootstrap basic</li>
-                        <li class="exercise-item" onclick="loadContent('boot-paired', this)">Bootstrap paired</li>
-                        <li class="exercise-item" onclick="loadContent('boot-block', this)">Bootstrap block</li>
-                        <li class="exercise-item" onclick="loadContent('boot-cluster', this)">Bootstrap cluster</li>
-                        <li class="exercise-item" onclick="loadContent('boot-wild', this)">Bootstrap wild</li>
-                    </ul>
-                </div>
+        <!-- Need Help? -->
+        <section style="margin-bottom: 40px;">
+            <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #2d3748;">❓ Need Help? We're Here!</h2>
+            <p style="font-size: 1.1rem; color: #4a5568;">If anything is unclear, you're not alone. The project is open-source, and the community is happy to assist.</p>
+            <ul style="font-size: 1.1rem; color: #4a5568; padding-left: 20px; list-style-type: square;">
+                <li><strong>Documentation:</strong> The download package comes with a helpful "README" file or a "docs" folder.</li>
+                <li><strong>Community:</strong> You can ask questions on the project's GitHub page.
