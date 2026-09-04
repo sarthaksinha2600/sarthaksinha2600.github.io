@@ -96,41 +96,6 @@
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
         
 
 
@@ -158,13 +123,15 @@
             transition: background-color 0.15s ease, color 0.15s ease;
         }
 
-        /* Hover interaction: Changes color only, NO right-indentation shift */
-        .exercise-item:hover, .exercise-item.active {
-            background-color: #f4f4f4;
-            color: #000000;
-            padding-left: 0; /* Changed from 5px to 0 to completely stop right-indentation */
-        }
 
+        
+        /* Hover interaction: Rectangular light blue highlight, NO shifting */
+        .exercise-item:hover, .exercise-item.active {
+            background-color: #e6f2ff; /* Clean light blue color */
+            color: #000000;
+            border-radius: 0;          /* Forces perfectly sharp rectangular corners */
+            padding-left: 0; 
+        }
 
         
 
