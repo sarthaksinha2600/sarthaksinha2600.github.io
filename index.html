@@ -33,8 +33,6 @@
         }
 
 
-
-
         /* Left Sidebar: Fixed width, full height, with vertical line and hidden scrollbar */
         aside {
             width: 320px;
@@ -148,6 +146,18 @@
             font-size: 0.9rem;
         }
         .btn:hover { background-color: #444444; }
+
+        /* Main Portfolio Header Title with Full-Width Underline Separator */
+        .main-portfolio-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #111111;
+            padding: 0 15px 15px 0; /* Aligned with elements, padding on bottom before line */
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e5e5; /* Standard gray line extending entire width */
+            line-height: 1.4;
+        }
+
     </style>
 </head>
 <body>
@@ -162,6 +172,11 @@
                 <img src="logo.png" alt="Site Logo" class="sidebar-logo">
             </div>
             <div class="menu-container">
+
+                <!-- Main Portfolio Header Title -->
+                <div class="main-portfolio-title">
+                    Simulation Methods in Econometrics: Theory and Applications in MATLAB
+                </div>
 
                 <!-- Introduction to MATLAB -->
                 <div class="nav-section">
