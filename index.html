@@ -14,29 +14,28 @@
         /* Outer Page Background */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+            background-color: #ffffff; /* Clean white background */
             color: #222;
-            padding: 30px 20px;
+            padding: 40px 20px;
             min-height: 100vh;
         }
 
-        /* Flat Rectangular Main Wrapper Container */
+        /* Borderless Centered Wrapper Container */
         .page-wrapper {
             display: flex;
             max-width: 1050px;
             height: 85vh;
             margin: 0 auto;
             background-color: #ffffff;
-            border: 1px solid #cccccc; /* Clean flat border */
-            border-radius: 0;          /* Sharp rectangular corners */
-            box-shadow: none;          /* Completely flat, no shadows */
+            border: none;       /* Completely removed outer frame border */
+            box-shadow: none;   /* No shadows */
         }
 
-        /* Left Sidebar Styling */
+        /* Left Sidebar Styling (Minimalist, no heavy borders) */
         aside {
             width: 300px;
-            background-color: #fdfdfd;
-            border-right: 1px solid #cccccc;
+            background-color: #fcfcfc;
+            border-right: 1px solid #e5e5e5; /* Subtle divider line between sidebar and content */
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -45,11 +44,11 @@
 
         .sidebar-header {
             padding: 18px 20px;
-            background-color: #333333;
-            color: #ffffff;
-            font-size: 1rem;
+            background-color: #ffffff;
+            color: #111111;
+            font-size: 1.05rem;
             font-weight: bold;
-            border-bottom: 1px solid #cccccc;
+            border-bottom: 1px solid #e5e5e5;
         }
 
         .menu-container {
@@ -64,15 +63,14 @@
         summary {
             padding: 8px 10px;
             font-weight: bold;
-            background-color: #f0f0f0;
-            border: 1px solid #dcdcdc;
-            border-radius: 0;
+            background-color: #f4f4f4;
+            border: none;
             cursor: pointer;
             font-size: 0.95rem;
         }
 
         summary:hover {
-            background-color: #e5e5e5;
+            background-color: #eaeaea;
         }
 
         /* Subsections & Exercise List */
@@ -86,22 +84,20 @@
             padding: 7px 10px;
             margin-bottom: 3px;
             background-color: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 0;
+            border: 1px solid #f0f0f0;
             cursor: pointer;
             font-size: 0.88rem;
         }
 
         .exercise-item:hover {
-            background-color: #222222;
+            background-color: #111111;
             color: #ffffff;
-            border-color: #222222;
         }
 
         /* Right Content Area Styling */
         main {
             flex-grow: 1;
-            padding: 35px;
+            padding: 20px 40px;
             overflow-y: auto;
             background-color: #ffffff;
         }
@@ -114,9 +110,8 @@
         p { line-height: 1.5; color: #444444; margin-bottom: 18px; font-size: 0.95rem; }
         
         .code-preview {
-            background-color: #f4f4f4;
-            border: 1px solid #cccccc;
-            border-radius: 0;
+            background-color: #f9f9f9;
+            border: 1px solid #e5e5e5;
             padding: 12px;
             font-family: monospace;
             font-size: 0.85rem;
@@ -127,18 +122,17 @@
         .btn {
             display: inline-block;
             padding: 7px 14px;
-            background-color: #333333;
+            background-color: #111111;
             color: #ffffff;
             text-decoration: none;
-            border-radius: 0;
             font-size: 0.9rem;
         }
-        .btn:hover { background-color: #555555; }
+        .btn:hover { background-color: #444444; }
     </style>
 </head>
 <body>
 
-    <!-- Flat Centered Wrapper -->
+    <!-- Borderless Centered Wrapper -->
     <div class="page-wrapper">
 
         <!-- Left Sidebar with Accordions -->
