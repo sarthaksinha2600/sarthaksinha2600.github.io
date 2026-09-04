@@ -11,14 +11,25 @@
             padding: 0;
         }
 
-        /* Full viewport split-screen body */
+        /* Outer Page Background providing the Left & Right Whitespace */
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
             color: #222;
             display: flex;
-            height: 100vh; /* Spans full height of the browser screen */
+            justify-content: center; /* Centers the split screen container */
+            height: 100vh;
             overflow: hidden;
+            padding: 0 5%; /* Adjust this percentage or use a fixed width to control left/right whitespace */
+        }
+
+        /* Full-Height Split Screen Wrapper Container */
+        .page-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 1200px; /* Maximum width of the split view */
+            height: 100vh;     /* Spans full height from top to bottom */
+            background-color: #ffffff;
         }
 
         /* Left Sidebar: Fixed width, full height, with full-height border */
@@ -30,7 +41,6 @@
             flex-direction: column;
             overflow-y: auto;
             flex-shrink: 0;
-            padding-left: 20px; /* Aligns content away from extreme left edge if desired, or set to 20px */
             padding-right: 15px;
         }
 
@@ -125,38 +135,43 @@
 </head>
 <body>
 
-    <!-- Left Sidebar (Split Pane 1) -->
-    <aside>
-        <div class="sidebar-header">My Exercises</div>
-        <div class="menu-container">
+    <!-- Split Screen Wrapper with Outer Side Padding -->
+    <div class="page-wrapper">
 
-            <!-- Section 1 -->
-            <details open>
-                <summary>Econometrics & MATLAB</summary>
-                <ul class="subsection-list">
-                    <li class="exercise-item" onclick="loadContent('ex1')">Exercise 1: Monte Carlo Simulation</li>
-                    <li class="exercise-item" onclick="loadContent('ex2')">Exercise 2: Bootstrap Methods</li>
-                </ul>
-            </details>
+        <!-- Left Sidebar (Split Pane 1) -->
+        <aside>
+            <div class="sidebar-header">My Exercises</div>
+            <div class="menu-container">
 
-            <!-- Section 2 -->
-            <details>
-                <summary>General Exercises</summary>
-                <ul class="subsection-list">
-                    <li class="exercise-item" onclick="loadContent('ex3')">Exercise 3: Data Parsing</li>
-                </ul>
-            </details>
+                <!-- Section 1 -->
+                <details open>
+                    <summary>Econometrics & MATLAB</summary>
+                    <ul class="subsection-list">
+                        <li class="exercise-item" onclick="loadContent('ex1')">Exercise 1: Monte Carlo Simulation</li>
+                        <li class="exercise-item" onclick="loadContent('ex2')">Exercise 2: Bootstrap Methods</li>
+                    </ul>
+                </details>
 
-        </div>
-    </aside>
+                <!-- Section 2 -->
+                <details>
+                    <summary>General Exercises</summary>
+                    <ul class="subsection-list">
+                        <li class="exercise-item" onclick="loadContent('ex3')">Exercise 3: Data Parsing</li>
+                    </ul>
+                </details>
 
-    <!-- Right Content Viewer (Split Pane 2) -->
-    <main>
-        <div class="content-card" id="display-area">
-            <h1>Welcome!</h1>
-            <p>Select an exercise from the left sidebar to view its description and code.</p>
-        </div>
-    </main>
+            </div>
+        </aside>
+
+        <!-- Right Content Viewer (Split Pane 2) -->
+        <main>
+            <div class="content-card" id="display-area">
+                <h1>Welcome!</h1>
+                <p>Select an exercise from the left sidebar to view its description and code.</p>
+            </div>
+        </main>
+
+    </div>
 
     <!-- JavaScript to Handle Dynamic Content Loading -->
     <script>
