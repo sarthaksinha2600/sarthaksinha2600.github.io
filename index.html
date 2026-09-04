@@ -89,7 +89,7 @@
 
         /* Exercise Items List - Perfectly Flush Left */
         .exercise-item {
-            padding: 6px 0;         /* Changed 10px to 0 on the left and right */
+            padding: 6px 0;         
             margin-bottom: 2px;
             background-color: #ffffff;
             border: none;
@@ -100,12 +100,15 @@
             transition: background-color 0.15s ease, color 0.15s ease;
         }
 
-        /* Flat interaction: Subtle color change only, NO bold, NO underline */
+        /* Hover interaction: Changes color only, NO right-indentation shift */
         .exercise-item:hover, .exercise-item.active {
             background-color: #f4f4f4;
             color: #000000;
-            padding-left: 5px; /* Adds a tiny, clean shift only on hover so text isn't stuck to the edge when highlighted */
+            padding-left: 0; /* Changed from 5px to 0 to completely stop right-indentation */
         }
+
+
+        
 
 
 
