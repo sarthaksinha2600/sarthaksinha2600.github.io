@@ -32,11 +32,11 @@
             background-color: #ffffff;
         }
 
-        /* Left Sidebar: Fixed width, full height, with full-height  */
+        /* Left Sidebar: Fixed width, full height, with vertical line */
         aside {
             width: 320px;
             background-color: #ffffff;
-            -right: 1px solid #e5e5e5;
+            border-right: 1px solid #e5e5e5; /* Restored 'border-' */
             display: flex;
             flex-direction: column;
             overflow-y: auto;
@@ -47,9 +47,9 @@
         .sidebar-header {
             padding: 15px 0;
             background-color: #ffffff;
-            -bottom: none;
+            border-bottom: none; /* Restored 'border-' */
         }
-
+    
         /* Full-Width Logo Styling */
         .sidebar-logo {
             width: 100%;
