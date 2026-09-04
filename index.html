@@ -152,12 +152,13 @@
             font-size: 1rem;
             font-weight: bold;
             color: #111111;
-            padding: 0 15px 15px 0; /* Aligned with elements, padding on bottom before line */
+            padding: 0 0 15px 0;    /* Zero left/right padding to keep it completely flush */
             margin-bottom: 20px;
-            border-bottom: 1px solid #e5e5e5; /* Standard gray line extending entire width */
+            margin-right: -15px;    /* Pulls the line right to perfectly touch the vertical line */
+            border-bottom: 1px solid #e5e5e5; /* Standard gray line stretching fully */
             line-height: 1.4;
         }
-
+        
     </style>
 </head>
 <body>
