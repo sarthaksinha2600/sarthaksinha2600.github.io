@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Exercise Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* Left Sidebar Styling */
+        aside {
+            width: 300px;
+            background-color: #ffffff;
+            border-right: 1px solid #e1e4e8;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background-color: #24292e;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .menu-container {
+            padding: 10px;
+        }
+
+        /* Collapsible Section Details */
+        details {
+            margin-bottom: 8px;
+        }
+
+        summary {
+            padding: 10px 12px;
+            font-weight: 600;
+            background-color: #f1f8ff;
+            border: 1px solid #c8e1fb;
+            border-radius: 6px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        summary:hover {
+            background-color: #def1ff;
+        }
+
+        /* Subsections & Exercise List */
+        .subsection-list {
+            list-style: none;
+            padding-left: 15px;
+            margin-top: 6px;
+        }
+
+        .exercise-item {
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            background-color: #fafbfc;
+            border: 1px solid #e1e4e8;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .exercise-item:hover {
+            background-color: #0366d6;
+            color: white;
+            border-color: #0366d6;
+        }
+
+        /* Right Content Area Styling */
+        main {
+            flex-grow: 1;
+            padding: 40px;
+            overflow-y: auto;
+            background-color: #ffffff;
+        }
+
+        .content-card {
+            max-width: 800px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e1e4e8;
+        }
+
+        h1 { margin-bottom: 15px; color: #24292e; }
+        p { line-height: 1.6; color: #586069; margin-bottom: 20px; }
+        
+        .code-preview {
+            background-color: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 15px;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #2ea44f;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .btn:hover { background-color: #2c974b; }
+    </style>
+</head>
+<body>
+
+    <!-- Left Sidebar with Accordions -->
+    <aside>
+        <div class="sidebar-header">My Exercises</div>
+        <div class="menu-container">
+
+            <!-- Section 1 -->
+            <details open>
+                <summary>HTML & CSS Basics</summary>
+                <ul class="subsection-list">
+                    <li class="exercise-item" onclick="loadContent('ex1')">Exercise 1: Landing Page</li>
+                    <li class="exercise-item" onclick="loadContent('ex2')">Exercise 2: Flexbox Grid</li>
+                </ul>
+            </details>
+
+            <!-- Section 2 -->
+            <details>
+                <summary>JavaScript Fundamentals</summary>
+                <ul class="subsection-list">
+                    <li class="exercise-item" onclick="loadContent('ex3')">Exercise 1: Counter App</li>
+                    <li class="exercise-item" onclick="loadContent('ex4')">Exercise 2: To-Do List</li>
+                </ul>
+            </details>
+
+            <!-- Section 3 -->
+            <details>
+                <summary>Advanced Projects</summary>
+                <ul class="subsection-list">
+                    <li class="exercise-item" onclick="loadContent('ex5')">Exercise 1: Weather API</li>
+                </ul>
+            </details>
+
+        </div>
+    </aside>
+
+    <!-- Right Dynamic Content Viewer -->
+    <main>
+        <div class="content-card" id="display-area">
+            <h1>Welcome!</h1>
+            <p>Select an exercise from the left sidebar to view its details, description, and link to code.</p>
+        </div>
+    </main>
+
+    <!-- JavaScript to Handle Dynamic Content Loading -->
+    <script>
+        const exercises = {
+            'ex1': {
+                title: "Exercise 1: Landing Page",
+                desc: "A basic responsive landing page built with structural HTML5 tags and styled cleanly with CSS variables.",
+                code: "<header>\n  <h1>Hello World</h1>\n</header>",
+                repo: "https://github.com" // Replace with your repo link
+            },
+            'ex2': {
+                title: "Exercise 2: Flexbox Grid",
+                desc: "An exercise exploring CSS Flexbox properties to align and distribute items dynamically across viewports.",
+                code: ".container {\n  display: flex;\n  justify-content: space-between;\n}",
+                repo: "https://github.com"
+            },
+            'ex3': {
+                title: "Exercise 1: Counter App",
+                desc: "An interactive counter script handling click events, updating DOM elements dynamically with vanilla JavaScript.",
+                code: "let count = 0;\nfunction increment() { count++; }",
+                repo: "https://github.com"
+            },
+            'ex4': {
+                title: "Exercise 2: To-Do List",
+                desc: "A task manager application using JavaScript array methods to add, complete, and delete dynamic items.",
+                code: "const tasks = [];\nfunction addTask(text) { tasks.push(text); }",
+                repo: "https://github.com"
+            },
+            'ex5': {
+                title: "Exercise 1: Weather API",
+                desc: "An asynchronous JavaScript exercise utilizing Fetch API to pull live data and parse JSON responses.",
+                code: "fetch('https://weather.com...')\n  .then(res => res.json());",
+                repo: "https://github.com"
+            }
+        };
+
+        function loadContent(id) {
+            const data = exercises[id];
+            if (!data) return;
+
+            const displayArea = document.getElementById('display-area');
+            displayArea.innerHTML = `
+                <h1>${data.title}</h1>
+                <p>${data.desc}</p>
+                <div class="code-preview">${escapeHtml(data.code)}</div>
+                <a href="${data.repo}" target="_blank" class="btn">View Repository on GitHub</a>
+            `;
+        }
+
+        // Helper to safely format code previews
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+    </script>
+</body>
+</html>
 
