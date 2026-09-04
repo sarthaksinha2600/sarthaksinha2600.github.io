@@ -87,24 +87,29 @@
             margin-bottom: 4px;
         }
 
+
+
+        
+
         /* Exercise Items List - Perfectly Flush Left */
         .exercise-item {
-            padding: 6px 0;         /* Changed 10px to 0 on the left and right */
+            padding: 6px 0 6px 12px; /* Adds 12px of space on the left to make room for the hidden line */
+            margin-left: -12px;      /* Pulls the block back left so the text itself remains perfectly flush with headers */
             margin-bottom: 2px;
             background-color: #ffffff;
             border: none;
+            border-left: 4px solid transparent; /* Keeps an invisible line there so text doesn't jump when hovering */
             cursor: pointer;
             font-size: 0.85rem;
             color: #555555;
-            border-radius: 4px;
-            transition: background-color 0.15s ease, color 0.15s ease;
+            transition: color 0.15s ease, border-color 0.15s ease;
         }
 
-        /* Flat interaction: Subtle color change only, NO bold, NO underline */
+        /* Hover interaction: Turns text darker and shows a thick blue vertical line on the left */
         .exercise-item:hover, .exercise-item.active {
-            background-color: #f4f4f4;
+            background-color: transparent; /* Removes the old gray highlight completely */
             color: #000000;
-            padding-left: 5px; /* Adds a tiny, clean shift only on hover so text isn't stuck to the edge when highlighted */
+            border-left: 4px solid #0056b3; /* Shows a 4px thick royal blue line */
         }
 
 
