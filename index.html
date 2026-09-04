@@ -11,60 +11,51 @@
             padding: 0;
         }
 
-        /* Outer Page Background */
+        /* Full viewport split-screen body */
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
             color: #222;
-            padding: 40px 20px;
-            min-height: 100vh;
-        }
-
-        /* Borderless Centered Wrapper Container */
-        .page-wrapper {
             display: flex;
-            max-width: 1050px;
-            height: 85vh;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border: none;
-            box-shadow: none;
+            height: 100vh; /* Spans full height of the browser screen */
+            overflow: hidden;
         }
 
-        /* Left Sidebar Styling (No background shading) */
+        /* Left Sidebar: Fixed width, full height, with full-height border */
         aside {
-            width: 300px;
-            background-color: #ffffff; /* Clean white, no shade */
-            border-right: 1px solid #e5e5e5; /* Subtle divider line */
+            width: 320px;
+            background-color: #ffffff;
+            border-right: 1px solid #e5e5e5; /* Extends fully from top to bottom */
             display: flex;
             flex-direction: column;
             overflow-y: auto;
             flex-shrink: 0;
-            padding-right: 10px;
+            padding-left: 20px; /* Aligns content away from extreme left edge if desired, or set to 20px */
+            padding-right: 15px;
         }
 
         .sidebar-header {
-            padding: 18px 10px 18px 0;
+            padding: 24px 0 18px 0;
             background-color: #ffffff;
             color: #111111;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: bold;
             border-bottom: 1px solid #e5e5e5;
         }
 
         .menu-container {
-            padding: 15px 10px 15px 0;
+            padding: 20px 0;
         }
 
         /* Collapsible Section Details */
         details {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         summary {
             padding: 8px 10px;
             font-weight: bold;
-            background-color: transparent; /* No shading */
+            background-color: transparent;
             border: none;
             cursor: pointer;
             font-size: 0.95rem;
@@ -96,34 +87,34 @@
             font-weight: bold;
         }
 
-        /* Right Content Area Styling */
+        /* Right Content Area: Expands to fill remaining screen space */
         main {
             flex-grow: 1;
-            padding: 20px 40px;
+            padding: 40px 60px;
             overflow-y: auto;
             background-color: #ffffff;
         }
 
         .content-card {
-            max-width: 700px;
+            max-width: 800px;
         }
 
-        h1 { margin-bottom: 12px; color: #111111; font-size: 1.5rem; }
-        p { line-height: 1.5; color: #444444; margin-bottom: 18px; font-size: 0.95rem; }
+        h1 { margin-bottom: 12px; color: #111111; font-size: 1.6rem; }
+        p { line-height: 1.6; color: #444444; margin-bottom: 20px; font-size: 0.95rem; }
         
         .code-preview {
             background-color: #f9f9f9;
             border: 1px solid #e5e5e5;
-            padding: 12px;
+            padding: 15px;
             font-family: monospace;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             white-space: pre-wrap;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .btn {
             display: inline-block;
-            padding: 7px 14px;
+            padding: 8px 16px;
             background-color: #111111;
             color: #ffffff;
             text-decoration: none;
@@ -134,43 +125,38 @@
 </head>
 <body>
 
-    <!-- Borderless Centered Wrapper -->
-    <div class="page-wrapper">
+    <!-- Left Sidebar (Split Pane 1) -->
+    <aside>
+        <div class="sidebar-header">My Exercises</div>
+        <div class="menu-container">
 
-        <!-- Left Sidebar with Accordions -->
-        <aside>
-            <div class="sidebar-header">My Exercises</div>
-            <div class="menu-container">
+            <!-- Section 1 -->
+            <details open>
+                <summary>Econometrics & MATLAB</summary>
+                <ul class="subsection-list">
+                    <li class="exercise-item" onclick="loadContent('ex1')">Exercise 1: Monte Carlo Simulation</li>
+                    <li class="exercise-item" onclick="loadContent('ex2')">Exercise 2: Bootstrap Methods</li>
+                </ul>
+            </details>
 
-                <!-- Section 1 -->
-                <details open>
-                    <summary>Econometrics & MATLAB</summary>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('ex1')">Exercise 1: Monte Carlo Simulation</li>
-                        <li class="exercise-item" onclick="loadContent('ex2')">Exercise 2: Bootstrap Methods</li>
-                    </ul>
-                </details>
+            <!-- Section 2 -->
+            <details>
+                <summary>General Exercises</summary>
+                <ul class="subsection-list">
+                    <li class="exercise-item" onclick="loadContent('ex3')">Exercise 3: Data Parsing</li>
+                </ul>
+            </details>
 
-                <!-- Section 2 -->
-                <details>
-                    <summary>General Exercises</summary>
-                    <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('ex3')">Exercise 3: Data Parsing</li>
-                    </ul>
-                </details>
+        </div>
+    </aside>
 
-            </div>
-        </aside>
-
-        <!-- Right Dynamic Content Viewer -->
-        <main>
-            <div class="content-card" id="display-area">
-                <h1>Welcome!</h1>
-                <p>Select an exercise from the left sidebar to view its description and code.</p>
-            </div>
-        </main>
-
-    </div>
+    <!-- Right Content Viewer (Split Pane 2) -->
+    <main>
+        <div class="content-card" id="display-area">
+            <h1>Welcome!</h1>
+            <p>Select an exercise from the left sidebar to view its description and code.</p>
+        </div>
+    </main>
 
     <!-- JavaScript to Handle Dynamic Content Loading -->
     <script>
