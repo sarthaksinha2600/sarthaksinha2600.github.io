@@ -91,25 +91,25 @@
 
         
 
-        /* Exercise Items List - Perfectly Flush Left */
+        /* Exercise Items List - Perfectly Flush Left with Left Border */
         .exercise-item {
-            padding: 6px 0 6px 12px; /* Adds 12px of space on the left to make room for the hidden line */
-            margin-left: -12px;      /* Pulls the block back left so the text itself remains perfectly flush with headers */
+            padding: 6px 0 6px 12px; /* 12px space on the left to make room for the line */
             margin-bottom: 2px;
-            background-color: #ffffff;
+            background-color: transparent;
             border: none;
-            border-left: 4px solid transparent; /* Keeps an invisible line there so text doesn't jump when hovering */
+            /* Creates an invisible line so the text stays perfectly still */
+            border-left: 4px solid transparent; 
             cursor: pointer;
             font-size: 0.85rem;
             color: #555555;
             transition: color 0.15s ease, border-color 0.15s ease;
         }
 
-        /* Hover interaction: Turns text darker and shows a thick blue vertical line on the left */
+        /* Hover & Active interaction: text turns dark, thick blue line appears */
         .exercise-item:hover, .exercise-item.active {
-            background-color: transparent; /* Removes the old gray highlight completely */
+            background-color: transparent; /* No background highlight */
             color: #000000;
-            border-left: 4px solid #0056b3; /* Shows a 4px thick royal blue line */
+            border-left: 4px solid #0056b3; /* Thick blue line appears on the left */
         }
 
 
