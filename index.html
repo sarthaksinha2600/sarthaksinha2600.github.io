@@ -47,58 +47,56 @@
         .sidebar-header {
             padding: 15px 0;
             background-color: #ffffff;
-            border-bottom: none; /* Removed the horizontal line underneath */
+            border-bottom: none;
         }
 
         /* Full-Width Logo Styling */
         .sidebar-logo {
-            width: 100%;    /* Scales the logo to the exact width of the sidebar */
-            height: auto;   /* Maintains the image's original aspect ratio */
+            width: 100%;
+            height: auto;
             display: block;
         }
 
         .menu-container {
-            padding: 10px 0 20px 0;
+            padding: 10px 0 30px 0;
         }
 
-        /* Collapsible Section Details */
-        details {
-            margin-bottom: 10px;
+        /* Section Category Titles (Flat, Non-Collapsible) */
+        .nav-section {
+            margin-bottom: 16px;
         }
 
-        summary {
-            padding: 8px 10px;
-            font-weight: bold;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
+        .section-title {
             font-size: 0.95rem;
+            font-weight: bold;
+            color: #111111;
+            padding: 6px 10px 4px 10px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 4px;
         }
 
-        summary:hover {
-            color: #0056b3;
-        }
-
-        /* Subsections & Exercise List */
+        /* Exercise Items List */
         .subsection-list {
             list-style: none;
-            padding-left: 12px;
-            margin-top: 6px;
+            padding-left: 10px;
         }
 
         .exercise-item {
-            padding: 7px 10px;
-            margin-bottom: 3px;
+            padding: 6px 10px;
+            margin-bottom: 2px;
             background-color: #ffffff;
             border: none;
             cursor: pointer;
-            font-size: 0.88rem;
-            color: #444444;
+            font-size: 0.85rem;
+            color: #555555;
+            border-radius: 4px;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
 
-        .exercise-item:hover {
+        /* Flat interaction: Subtle color change only, NO bold, NO underline */
+        .exercise-item:hover, .exercise-item.active {
+            background-color: #f4f4f4;
             color: #000000;
-            font-weight: bold;
         }
 
         /* Right Content Area: Expands to fill remaining screen space */
@@ -150,75 +148,67 @@
             </div>
             <div class="menu-container">
 
-                <!-- Section 1 -->
-                <details open>
-                    <summary>Econometrics & MATLAB</summary>
+                <!-- Introduction to MATLAB -->
+                <div class="nav-section">
+                    <div class="section-title">Introduction to MATLAB</div>
                     <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('ex1')">Exercise 1: Monte Carlo Simulation</li>
-                        <li class="exercise-item" onclick="loadContent('ex2')">Exercise 2: Bootstrap Methods</li>
+                        <li class="exercise-item" onclick="loadContent('matlab-workshop', this)">MATLAB workshop</li>
                     </ul>
-                </details>
+                </div>
 
-                <!-- Section 2 -->
-                <details>
-                    <summary>General Exercises</summary>
+                <!-- Asymptotic Foundations -->
+                <div class="nav-section">
+                    <div class="section-title">Asymptotic Foundations</div>
                     <ul class="subsection-list">
-                        <li class="exercise-item" onclick="loadContent('ex3')">Exercise 3: Data Parsing</li>
+                        <li class="exercise-item" onclick="loadContent('asymptotics-lln', this)">Asymptotics LLN</li>
+                        <li class="exercise-item" onclick="loadContent('asymptotics-clt', this)">Asymptotics CLT</li>
+                        <li class="exercise-item" onclick="loadContent('asymptotics-speed', this)">Asymptotics convergence speed</li>
                     </ul>
-                </details>
+                </div>
 
-            </div>
-        </aside>
+                <!-- Sampling Distributions and Estimator Properties -->
+                <div class="nav-section">
+                    <div class="section-title">Sampling Distributions & Estimator Properties</div>
+                    <ul class="subsection-list">
+                        <li class="exercise-item" onclick="loadContent('est-dist', this)">Estimator sampling distribution</li>
+                        <li class="exercise-item" onclick="loadContent('est-unbiased', this)">Estimator statistical property unbiasedness</li>
+                        <li class="exercise-item" onclick="loadContent('est-consistency', this)">Estimator statistical property consistency</li>
+                        <li class="exercise-item" onclick="loadContent('est-normality', this)">Estimator statistical property asymptotic normality</li>
+                        <li class="exercise-item" onclick="loadContent('inf-ci', this)">Inference confidence interval estimation</li>
+                        <li class="exercise-item" onclick="loadContent('inf-test', this)">Inference hypothesis testing</li>
+                    </ul>
+                </div>
 
-        <!-- Right Content Viewer (Split Pane 2) -->
-        <main>
-            <div class="content-card" id="display-area">
-                <h1>Welcome!</h1>
-                <p>Select an exercise from the left sidebar to view its description and code.</p>
-            </div>
-        </main>
+                <!-- Linear Regression: Functions and Assumptions -->
+                <div class="nav-section">
+                    <div class="section-title">Linear Regression: Functions & Assumptions</div>
+                    <ul class="subsection-list">
+                        <li class="exercise-item" onclick="loadContent('reg-exogeneity', this)">Model assumption exogeneity</li>
+                        <li class="exercise-item" onclick="loadContent('reg-homo', this)">Model assumption homoskedasticity</li>
+                        <li class="exercise-item" onclick="loadContent('reg-no-error', this)">Model assumption no measurement error</li>
+                        <li class="exercise-item" onclick="loadContent('reg-no-serial', this)">Model assumption no serial correlation</li>
+                        <li class="exercise-item" onclick="loadContent('reg-normality', this)">Model assumption normality</li>
+                        <li class="exercise-item" onclick="loadContent('reg-multicollinearity', this)">Data feature high multicollinearity</li>
+                    </ul>
+                </div>
 
-    </div>
+                <!-- Monte Carlo Integration -->
+                <div class="nav-section">
+                    <div class="section-title">Monte Carlo Integration</div>
+                    <ul class="subsection-list">
+                        <li class="exercise-item" onclick="loadContent('mc-theory', this)">Monte Carlo integration theory</li>
+                        Monte Carlo integration identity function</li>
+                        <li class="exercise-item" onclick="loadContent('mc-log', this)">Monte Carlo integration logarithmic function</li>
+                        <li class="exercise-item" onclick="loadContent('mc-gaussian', this)">Monte Carlo integration gaussian function</li>
+                        <li class="exercise-item" onclick="loadContent('mc-profit', this)">Monte Carlo integration profit function</li>
+                    </ul>
+                </div>
 
-    <!-- JavaScript to Handle Dynamic Content Loading -->
-    <script>
-        const exercises = {
-            'ex1': {
-                title: "Exercise 1: Monte Carlo Simulation",
-                desc: "Simulating estimators and analyzing small-sample properties using MATLAB scripts.",
-                code: "% MATLAB Monte Carlo Example\nR = 1000;\nbeta_hat = zeros(R, 1);\nfor i = 1:R\n    % generate data and estimate\nend",
-                repo: "https://github.com"
-            },
-            'ex2': {
-                title: "Exercise 2: Bootstrap Methods",
-                desc: "Implementing non-parametric and residual bootstrap loops for confidence interval calculations.",
-                code: "% MATLAB Bootstrap Loop\nboot_samples = datasample(data, [size(data,1), R]);",
-                repo: "https://github.com"
-            },
-            'ex3': {
-                title: "Exercise 3: Data Parsing",
-                desc: "Reading macro-economic data matrices and handling missing values.",
-                code: "data = readtable('dataset.csv');\nclean_data = rmmissing(data);",
-                repo: "https://github.com"
-            }
-        };
-
-        function loadContent(id) {
-            const data = exercises[id];
-            if (!data) return;
-
-            const displayArea = document.getElementById('display-area');
-            displayArea.innerHTML = `
-                <h1>${data.title}</h1>
-                <p>${data.desc}</p>
-                <div class="code-preview">${escapeHtml(data.code)}</div>
-                <a href="${data.repo}" target="_blank" class="btn">View Repository on GitHub</a>
-            `;
-        }
-
-        function escapeHtml(str) {
-            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        }
-    </script>
-</body>
-</html>
+                <!-- Random Variate Generation -->
+                <div class="nav-section">
+                    <div class="section-title">Random Variate Generation</div>
+                    <ul class="subsection-list">
+                        <li class="exercise-item" onclick="loadContent('rv-its-theory', this)">Inverse transform sampling theory</li>
+                        <li class="exercise-item" onclick="loadContent('rv-its-app', this)">Inverse transform sampling application</li>
+                        <li class="exercise-item" onclick="loadContent('rv-rej-theory', this)">Rejection sampling theory</li>
+                        <li class="exercise-item" onclick="loadContent('rv-rej-gauss', this)">Rejection sampling gaussian-oscillatory</li>
