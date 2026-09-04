@@ -87,29 +87,24 @@
             margin-bottom: 4px;
         }
 
-
-
-        
-
-        /* Exercise Items List - Perfectly Flush Left with Left Border */
+        /* Exercise Items List - Perfectly Flush Left */
         .exercise-item {
-            padding: 6px 0 6px 12px; /* 12px space on the left to make room for the line */
+            padding: 6px 0;         /* Changed 10px to 0 on the left and right */
             margin-bottom: 2px;
-            background-color: transparent;
+            background-color: #ffffff;
             border: none;
-            /* Creates an invisible line so the text stays perfectly still */
-            border-left: 4px solid transparent; 
             cursor: pointer;
             font-size: 0.85rem;
             color: #555555;
-            transition: color 0.15s ease, border-color 0.15s ease;
+            border-radius: 4px;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
 
-        /* Hover & Active interaction: text turns dark, thick blue line appears */
+        /* Flat interaction: Subtle color change only, NO bold, NO underline */
         .exercise-item:hover, .exercise-item.active {
-            background-color: transparent; /* No background highlight */
+            background-color: #f4f4f4;
             color: #000000;
-            border-left: 4px solid #0056b3; /* Thick blue line appears on the left */
+            padding-left: 5px; /* Adds a tiny, clean shift only on hover so text isn't stuck to the edge when highlighted */
         }
 
 
